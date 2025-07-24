@@ -1,0 +1,87 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "My Favorite Song";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        <style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #00ffcc;
+    }
+
+    .video-container {
+        margin-top: 20px;
+    }
+
+    /* Animation styles */
+    .animated-title {
+        animation: fadeInOut 3s ease-in-out infinite;
+    }
+    
+    @@keyframes fadeInOut {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+</style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="animated-title">🎵 My Favorite Song 🎵</h1>
+
+        <div class="video-container">
+            <iframe width="914" height="514" src="https://www.youtube.com/embed/_mSYQ1kadYg" title="Future, Metro Boomin, The Weeknd - We Still Don&#39;t Trust You (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const title = document.querySelector(".animated-title");
+                let opacity = 0;
+                let direction = 1; // 1 = fade in, -1 = fade out
+
+                // Set initial styles
+                title.style.opacity = opacity;
+                title.style.transition = "opacity 0.05s";
+
+                setInterval(() => {
+                    opacity += 0.02 * direction;
+
+                    if (opacity >= 1) {
+                        opacity = 1;
+                        direction = -1; // Start fading out
+                    } else if (opacity <= 0) {
+                        opacity = 0;
+                        direction = 1; // Start fading in
+                    }
+
+                    title.style.opacity = opacity;
+                }, 50);
+            });
+    </script>
+
+    </script>
+</body>
+</html>
